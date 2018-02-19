@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html th:fragment="thymeleafsec" lang="en" xmlns:th="www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-sringsecurity">
+<!-- Theme header-->
+<head th:fragment="defaulthead">
+    <meta charset="UTF-8"/>
+    <title>${title}</title>
+
+    <!--Bootstrap header -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Theme header-->
+</head>
+<body>
+<!--NavBar Fragment-->
+<div class="row" th:fragement="navbar">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-success navbar-dark bg-primary">
+            <img class="navbar-brand navbarlogodetails" src=""  alt="logo">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/register}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="hasAuthority('USER')" th:href="@{/add}">Add Entity!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="hasAuthority('USER')" th:href="@{/add}" >Add Entity!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="hasAuthority('USER')" th:href="@{/add}">Add Entity!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"sec:authorize="hasAuthority('USER')"  th:href="@{/add}">Add Entity Profile!</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Edit Information List
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item"sec:authorize="hasAuthority('USER')" th:href="@{/List}">Show Entity List!</a>
+                        <a class="dropdown-item" sec:authorize="hasAuthority('USER')" th:href="@{/List}">Show Entity List!</a>
+                        <a class="dropdown-item" sec:authorize="hasAuthority('USER')" th:href="@{/List}">Show Entity List</a>
+                        <a class="dropdown-item" sec:authorize="hasAuthority('USER')" th:href="@{/List}">Show Entity List</a>
+                    </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Services
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/create}">Show Resume</a>
+                        <a class="dropdown-item" th:href="@{/createcoverletter}">Show Cover Letter</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--End Navbar Fragment-->
+
+<!--Bootstrap jquery and javascript fragment-->
+<span th:fragment="bootstrap4js">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</span>
+<!--End BootStrap 4 Fragment-->
+</body>
+</html>
